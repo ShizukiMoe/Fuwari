@@ -56,6 +56,11 @@ export const profileConfig: ProfileConfig = {
 	name: "Shizuki Natsuki",
 	bio: "可愛いは正義です",
 	links: [
+        {
+            name: 'GitHub',
+            url: 'https://github.com/ShizukiNatsuki',
+            icon: 'fa6-brands:github',
+        },
 	],
 };
 
