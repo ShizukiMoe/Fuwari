@@ -61,6 +61,12 @@ export const profileConfig: ProfileConfig = {
             url: 'https://github.com/ShizukiNatsuki',
             icon: 'fa6-brands:github',
         },
+
+        {
+            name: 'Steam',
+            url: 'https://steamcommunity.com/id/ShizukiNatsuki/',
+            icon: 'fa6-brands:steam',
+        },
     ],
 };
 
