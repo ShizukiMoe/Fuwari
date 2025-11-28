@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  push:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          PERSONAL_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          EXTERNAL_REPOSITORY: ShizukiMoe/ShizukiMoe.github.io
+          PUBLISH_BRANCH: main
+          PUBLISH_DIR: ./dist
+          commit_message: ${{ github.event.head_commit.message }}
