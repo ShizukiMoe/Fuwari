@@ -55,7 +55,13 @@ export const profileConfig: ProfileConfig = {
 	avatar: "assets/images/avatar.png",
 	name: "Shizuki Natsuki",
 	bio: "可愛いは正義です",
-	links: [],
+	links: [
+        {
+            name: 'GitHub',
+            url: 'https://github.com/ShizukiNatsuki',
+            icon: 'fa6-brands:github',
+        },
+    ],
 };
 
 export const licenseConfig: LicenseConfig = {
